@@ -51,7 +51,7 @@ $ open -e myapp/Crashy.xcodeproj
 
 Main view looks like this:
 
-![image](images/view1.png =350x)
+![image](images/view1.png)
 
 The app template already has action outlets defined for the buttons on one of the tabs.
 
