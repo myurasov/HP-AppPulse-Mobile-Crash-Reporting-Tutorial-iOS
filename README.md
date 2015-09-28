@@ -21,7 +21,7 @@ v0.1
 - creating buggy app with Xcode and Swift
 - registering AppPule accouny
 - adding AppPule to the project
-- viewing the reports
+- viewing the reports, email notifications
 - conclusion
 
 ---
