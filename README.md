@@ -11,7 +11,7 @@
 - SDK breadcrumbs API – Say that automatic crash trail is great for most cases but sometimes there’s a need to see internal data that is only known in the context of the app (e.g. – server to which is it connected)
 -->
 
-v0.1
+v0.2
 
 ---
 
@@ -26,7 +26,7 @@ v0.1
 
 ---
 
-## Why Bother?
+## Why?
 
 Every developer strives to write his code in a best possible manner and avoid bugs before they ship to end-user device. However in reality the only bug-free software is the one that doesn't exist.
 
@@ -74,15 +74,24 @@ to both _onButton1Tap_ and _onButton2Tap_ methods, the application (when deploye
 
 ## Adding AppPulse Mobile to Your Project
 
+### Adding the SDK
+
 The process of adding AppPulse Mobile is pretty-straightforward:
 
 * Go to [http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html) and start your free trial. Then make sure AppPule Mobile is enabled in your HP SAAS control panel.
 
  
-* Navigate to AppPulse Mobile control panel and press + to create a new iOS application. Enter your application name and the modal window with a detailed instruction will pop up. Make sure you download and add the AppPulsemobile framework to your project and set the _AppId_ parameter in __hprunmonitor.plist__:
+* Navigate to AppPulse Mobile control panel and press + to create a new iOS application. Enter your application name and the modal window with a detailed instruction will pop up. Make sure you download and add the AppPulsemobile framework to your project and set the _AppId_ parameter in __hprunmonitor.plist__.
 
-![image](images/appid.png)
+Bingo! Now when you launch your application you should see something like the following message in your Xcode console area:
 
+![](images/console.png)
+
+Congratulations, you now have access to the usage statistics and performance metrics without writing a single line of code.
+
+Let's learn how we can use HP AppPulse Mobile to benefit from it's error and crash reporting capabilities.
+
+##
 
 ## Viewing the Reports
 
