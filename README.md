@@ -20,7 +20,7 @@ v0.2
 - intro
 - creating buggy app with Xcode and Swift
 - registering AppPule accouny
-- adding AppPule to the project
+- adding AppPulse to the project
 - viewing the reports, email notifications
 - conclusion
 
@@ -78,10 +78,13 @@ to both _onButton1Tap_ and _onButton2Tap_ methods, the application (when deploye
 
 The process of adding AppPulse Mobile is pretty-straightforward:
 
-* Go to [http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html) and start your free trial. Then make sure AppPule Mobile is enabled in your HP SAAS control panel.
+* Go to [http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html) and start your free trial.
 
  
-* Navigate to AppPulse Mobile control panel and press + to create a new iOS application. Enter your application name and the modal window with a detailed instruction will pop up. Make sure you download and add the AppPulsemobile framework to your project and set the _AppId_ parameter in __hprunmonitor.plist__.
+* Make sure AppPule Mobile is enabled in your HP SAAS control panel at [https://home.saas.hp.com/myaccount/#/myProducts](https://home.saas.hp.com/myaccount/#/myProducts).
+
+
+* Press + to create a new iOS application. Enter your application name and the modal window with a detailed instruction will pop up. Make sure you download and add the AppPulsemobile framework to your project and set the _AppId_ parameter in __hprunmonitor.plist__.
 
 Bingo! Now when you launch your application you should see something like the following message in your Xcode console area:
 
@@ -89,9 +92,17 @@ Bingo! Now when you launch your application you should see something like the fo
 
 Congratulations, you now have access to the usage statistics and performance metrics without writing a single line of code.
 
+![](images/panel1.png)
+
 Let's learn how we can use HP AppPulse Mobile to benefit from it's error and crash reporting capabilities.
 
-##
+### Crash Reporting
+
+In order to use HP AppPulse Mobile SDK in your application you need to import the header file. Add the following snippet to your __FirstViewController.m__ file:
+
+```
+#import <AppPulseMobile/HPAppPulse.h>
+```
 
 ## Viewing the Reports
 
