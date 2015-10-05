@@ -1,6 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Drop-in iOS Crash Analysis with HP AppPulse Mobile](#drop-in-ios-crash-analysis-with-hp-apppulse-mobile)
+  - [Why?](#why)
+  - [Why AppPulse Mobile?](#why-apppulse-mobile)
+  - [Creating a Buggy iOS Application](#creating-a-buggy-ios-application)
+  - [Adding AppPulse Mobile to Your Project](#adding-apppulse-mobile-to-your-project)
+    - [Adding the SDK](#adding-the-sdk)
+    - [Crash Reporting](#crash-reporting)
+  - [Viewing the Reports](#viewing-the-reports)
+  - [Integrations and E2E Flow](#integrations-and-e2e-flow)
+    - [JIRA](#jira)
+    - [Email Notifications](#email-notifications)
+  - [Conclusion](#conclusion)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Drop-in iOS Crash Analysis with HP AppPulse Mobile
-
-
 
 <!--- Motivation - Explain why crash analysis is critical to monitor in mobile apps, how it’s not possible to cover all use cases and device/OS matrix during testing.
 
@@ -13,6 +30,7 @@
 
 v0.3
 
+<!--
 ---
 
 (plan)
@@ -29,6 +47,7 @@ v0.3
 
 
 ---
+-->
 
 ## Why?
 
@@ -167,7 +186,11 @@ Every error and crash entry can be expanded to view more information:
 
 ![](images/error-details.png)
 
-## JIRA Integration and E2E Flow
+## Integrations and E2E Flow
+
+### JIRA
+
+### Email Notifications
 
 ## Conclusion
 
