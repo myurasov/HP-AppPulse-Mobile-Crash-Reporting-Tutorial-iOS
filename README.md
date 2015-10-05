@@ -11,7 +11,7 @@
 - SDK breadcrumbs API – Say that automatic crash trail is great for most cases but sometimes there’s a need to see internal data that is only known in the context of the app (e.g. – server to which is it connected)
 -->
 
-v0.2
+v0.3
 
 ---
 
@@ -23,6 +23,10 @@ v0.2
 - adding AppPulse to the project
 - viewing the reports, email notifications
 - conclusion
+- breadcrumbs api
+- e2e flow and JIRA integration
+
+
 
 ---
 
@@ -39,6 +43,18 @@ The thing is when 100 users experience an error only 1 may be willing to get int
 Now imagine there is a drop-in solution that can provide you with all the neccessary information in an event of an error – the device type, OS version, what user actions led to an error, etc. [HP AppPulse Mobile](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/) is exactly that. With AppPule Mobile every error or crash actually helps you to improve your application.
 
 This tutorial shows how you can add HP AppPulse support into your application and what are the benefits you get.
+
+## Why AppPulse Mobile?
+
+While there are lotf of crash reporting instruments out there there are few features unique to AppPulse Mobile:
+
+- AppPulse Mobile automatically mathces user actions to crash/error events making it easier to trace what exactly led to it.
+
+- Unique Breadcrumbs API that allows to attach meta information to reports.
+
+- Integration with JIRA for the tracking and rapid response to revealed issues.
+
+With that said, AppPulse Mobile is perfect choice for the enterprise mobile applications.
 
 ## Creating a Buggy iOS Application
 
@@ -104,7 +120,54 @@ In order to use HP AppPulse Mobile SDK in your application you need to import th
 #import <AppPulseMobile/HPAppPulse.h>
 ```
 
+Now the __HPAppPulse__ object is available for our use.
+
+Let's navigate to the __onButton1Tap__ method and add the following code to it:
+
+```
+@try {
+    [self throwCustomException];
+}
+@catch (NSException *ex) {
+	[HPAppPulse reportCrash: ex];
+    exit(1);
+}
+```
+
+Here we are using __reportCrash__ API call to upload information about an unrecoverable error.
+
+Add the following code to the __onButton2Tap__ to enable error generation:
+
+```
+[HPAppPulse addBreadcrumb:@"BREADCRUMB at button tapped"];
+
+@try{
+    [self throwCustomException];
+}
+@catch (NSException *ex){
+    [HPAppPulse reportHandledException: ex];
+}
+```
+
+The __addBreadcrumb__ call add the so-called bradcrumb to your report. Breadcrumb is essentially a piece of metadata you would like to see when you are troubleshooting the issue, such as a value of some variable, network connection state, etc.
+
+The __reportHandledException__ method is used to uppload errors that can be recovered and do not lead to an app termination.
+
+Launch your application either in sumulator or on device and try playing with two buttons seen on the first screen.
+
 ## Viewing the Reports
+
+To view your reports on errors and crashes, go to the __Stability__ page in your AppPulse Mobile control panel.
+
+The Stability overview page now has the information on captured crashes, errors and uswer actions that led to a problem:
+
+![](images/stability.png)
+
+Every error and crash entry can be expanded to view more information:
+
+![](images/error-details.png)
+
+## JIRA Integration and E2E Flow
 
 ## Conclusion
 
