@@ -19,21 +19,21 @@
 
 Every developer strives to write his code in a best possible manner and avoid bugs before they ship to end-user device. However in reality the only bug-free software is the one that doesn't exist.
 
-Some issues are caused by errors in application code and can be cought with extensive testing, while others can occure only due to some very specific combination of device/carrier/usage scenario/whatever. The best thing to catch those – is to essentially turn end-user device into your test rig. Sounds like testing in production, but with billions devices out there, since your app crashes anyway, it's better to at least know why.
+Some issues are caused by errors in application code and can be caught with extensive testing, while others can occur only due to some very specific combination of device/carrier/usage scenario/whatever. The best thing to catch those – is to essentially turn end-user device into your test rig. Sounds like testing in production, but with billions devices out there, since your app crashes anyway, it's better to at least know why.
 
 One may ask: _"Why adding another library that automates crash reporting? When something happens I will just ask my users to shoot me an email describing what they did and what buttons they tapped."_
 
 The thing is when 100 users experience an error only 1 may be willing to get into trouble writing an actual report. Other may just silently uninstall an app or, worse, give it a one-star rating before doing so. So it's critical to be informed about the error before there is a critical mass of disappointed users.
 
-Now imagine there is a drop-in solution that can provide you with all the neccessary information in an event of an error – the device type, OS version, what user actions led to an error, etc. [HP AppPulse Mobile](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/) is exactly that. With AppPule Mobile every error or crash actually helps you to improve your application.
+Now imagine there is a drop-in solution that can provide you with all the necessary information in an event of an error – the device type, OS version, what user actions led to an error, etc. [HP AppPulse Mobile](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/) is exactly that. With AppPule Mobile every error or crash actually helps you to improve your application.
 
 This tutorial shows how you can add HP AppPulse support into your application and what are the benefits you get.
 
 ## Why AppPulse Mobile?
 
-While there are lotf of crash reporting instruments out there there are few features unique to AppPulse Mobile:
+While there are lots of crash reporting instruments out there there are few features unique to AppPulse Mobile:
 
-- AppPulse Mobile automatically mathces user actions to crash/error events making it easier to trace what exactly led to it.
+- AppPulse Mobile automatically matches user actions to crash/error events making it easier to trace what exactly led to it.
 
 - Unique Breadcrumbs API that allows to attach meta information to reports.
 
@@ -134,17 +134,17 @@ Add the following code to the __onButton2Tap__ to enable error generation:
 }
 ```
 
-The __addBreadcrumb__ call add the so-called bradcrumb to your report. Breadcrumb is essentially a piece of metadata you would like to see when you are troubleshooting the issue, such as a value of some variable, network connection state, etc.
+The __addBreadcrumb__ call add the so-called breadcrumb to your report. Breadcrumb is essentially a piece of metadata you would like to see when you are troubleshooting the issue, such as a value of some variable, network connection state, etc.
 
-The __reportHandledException__ method is used to uppload errors that can be recovered and do not lead to an app termination.
+The __reportHandledException__ method is used to upload errors that can be recovered and do not lead to an app termination.
 
-Launch your application either in sumulator or on device and try playing with two buttons seen on the first screen.
+Launch your application either in simulator or on device and try playing with two buttons seen on the first screen.
 
 ## Viewing the Reports
 
 To view your reports on errors and crashes, go to the __Stability__ page in your AppPulse Mobile control panel.
 
-The Stability overview page now has the information on captured crashes, errors and uswer actions that led to a problem:
+The Stability overview page now has the information on captured crashes, errors and user actions that led to a problem:
 
 ![](images/stability.png)
 
