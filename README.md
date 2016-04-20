@@ -10,44 +10,10 @@
     - [Adding the SDK](#adding-the-sdk)
     - [Crash Reporting](#crash-reporting)
   - [Viewing the Reports](#viewing-the-reports)
-  - [Integrations and E2E Flow](#integrations-and-e2e-flow)
-    - [JIRA](#jira)
-    - [Email Notifications](#email-notifications)
-  - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Drop-in iOS Crash Analysis with HP AppPulse Mobile
-
-<!--- Motivation - Explain why crash analysis is critical to monitor in mobile apps, how it’s not possible to cover all use cases and device/OS matrix during testing.
-
-- Why crash log isn’t enough – Describe example or two of crashes that their root cause is hard to understand just by crash logs. For example, crashes that are related to the activity or fragment lifecycle. The point should be that in many cases you need to know what
-
-- Describe automatic crash trail by AppPulse Mobile – Explain how it solves the problem of the previous example.
-
-- SDK breadcrumbs API – Say that automatic crash trail is great for most cases but sometimes there’s a need to see internal data that is only known in the context of the app (e.g. – server to which is it connected)
--->
-
-v0.3
-
-<!--
----
-
-(plan)
-
-- intro
-- creating buggy app with Xcode and Swift
-- registering AppPule accouny
-- adding AppPulse to the project
-- viewing the reports, email notifications
-- conclusion
-- breadcrumbs api
-- e2e flow and JIRA integration
-
-
-
----
--->
 
 ## Why?
 
@@ -115,7 +81,7 @@ The process of adding AppPulse Mobile is pretty-straightforward:
 
 * Go to [http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html](http://www8.hp.com/us/en/software-solutions/apppulse-mobile-app-apm-monitoring/index.html) and start your free trial.
 
- 
+
 * Make sure AppPule Mobile is enabled in your HP SAAS control panel at [https://home.saas.hp.com/myaccount/#/myProducts](https://home.saas.hp.com/myaccount/#/myProducts).
 
 
@@ -186,13 +152,10 @@ Every error and crash entry can be expanded to view more information:
 
 ![](images/error-details.png)
 
-## Integrations and E2E Flow
+__License__
 
-### JIRA
+Feel free to use this article in any way, but please mention the author.
 
-### Email Notifications
+__Author__
 
-## Conclusion
-
-
-
+ Mikhail Yurasov <me@yurasov.me>
